@@ -1,7 +1,7 @@
 <div class="sidebar">
   <!-- Sidebar user panel (optional) -->
-  <div class="user-panel mt-2 mb-2 pb-2 d-flex">
-    <div class="image img-fluid d-flex justify-content-end align-items-center" style="left:.5rem">
+  <div class="user-panel mt-4 mb-2 pb-2 d-flex ">
+    <div class="image img-fluid d-flex justify-content-end align-items-center " style="left:.5rem">
       <img src="
                     <?php
                     if ($_SESSION['FOTO']) {

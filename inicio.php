@@ -95,7 +95,7 @@ if (!isset($_SESSION['USUARIO'])) {
   </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
   <div class="wrapper">
     <!-- Navbar -->
     <?php
@@ -107,9 +107,9 @@ if (!isset($_SESSION['USUARIO'])) {
     <aside class="main-sidebar sidebar-dark-gray elevation-4">
       <!-- Brand Logo -->
       <a href="inicio.php" class="brand-link navbar-blue-dark">
-        <img src="./image/icon.png" alt="ClinicCardio" title="Macedo e Bezerra" class="brand-image" style=" width: 30px; height: 50px; " />
+        <img src="./image/icon.png" alt="LC Engenharia" title="LC Engenharia" class="brand-image" style=" width: 30px; height: 50px; " />
         <span class="brand-text font-weight-light" style="font-family:Cinzel; font-weight: 500; font-size: 18px;">
-          <img src="./image/mebTxt.png" alt="ClinicCardio" title="Macedo e Bezerra" class="img-fluid" style=" width: 160px;" />
+          <img src="./image/mebTxt.png" alt="LC Engenharia" title="LC Engenharia" class="img-fluid" style=" width: 160px;" />
         </span>
       </a>
       <?php

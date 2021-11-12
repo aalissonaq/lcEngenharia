@@ -25144,6 +25144,7 @@ html.maximized-card {
 .login-box,
 .register-box {
   width: 360px;
+  background: transparent !important;
 }
 
 @media (max-width: 576px) {
@@ -25157,10 +25158,10 @@ html.maximized-card {
 
 .login-card-body,
 .register-card-body {
-  background: #ffffff;
+  background: transparent !important;
   border-top: 0;
   color: #666;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .login-card-body .input-group .form-control,

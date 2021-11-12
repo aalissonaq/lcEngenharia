@@ -19,64 +19,63 @@
   <link rel="stylesheet" href="./dist/css/adminlte.css" />
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
-<body class="hold-transition login-page"
-  style="background-image:url('./image/bgInit.jpg'); background-size: cover; background-position: left; height: 100vh;">
-  <div class="login-box">
-    <div class="login-logo">
-      <!-- <a href="./index2.html"><b>Laboratório</b> Dra. Telma</a> -->
-      <img src="./image/LOGO_DARK.png"
-        class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" />
-      <!-- <span style="font-size: 0.65em;">Sistemas de Gestão de Parceiros</!-->
-    </div>
-    <!-- /.login-logo -->
-    <div class="card" style="">
-      <div class="card-body login-card-body" style="">
-        <p class="login-box-msg">Faça login para iniciar sua sessão</p>
+<body class="hold-transition login-page" style="background-image:url('./image/bgInit.jpg'); background-size: cover; background-position: center; height: 100vh;">
 
-        <form action="./verifica.php" method="post">
-          <div class="input-group input-group-lg mb-3">
-            <input type="text" name="usuario" class="form-control cpfOuCnpj" autofocus
-              placeholder="Digite o CPF ou CNPJ" />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-id-card primary"></span>
-              </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-5 offset-md-1 d-flex justify-content-center">
+        <div class="login-box">
+          <div class="login-logo">
+            <!-- <a href="./index2.html"><b>Laboratório</b> Dra. Telma</a> -->
+            <img src="./image/LOGO_DARK.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} col-9 pt-1" alt="" style="margin-bottom: -1em;" />
+            <!-- <span style="font-size: 0.65em;">Sistemas de Gestão de Parceiros</!-->
           </div>
-          <div class="input-group input-group-lg mb-3">
-            <input type="password" name="senha" class="form-control " placeholder="Password" />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-7">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember" />
-                <label for="remember">
-                  Lembre de mim
-                </label>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-5">
-              <input type="hidden" name="entrar" value="entrar">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">
-                ENTRAR
-              </button>
-            </div>
-            <!-- /.col -->
-          </div>
-        </form>
+          <!-- /.login-logo -->
+          <div class="card" style=" box-shadow: none !important;  background: transparent !important;">
+            <div class="card-body login-card-body" style="background: none">
+              <p class="login-box-msg text-primary">Faça login para iniciar sua sessão</p>
 
-        <!-- <div class="social-auth-links text-center mb-3">
+              <form action="./verifica.php" method="post">
+                <div class="input-group input-group-lg mb-3">
+                  <input type="text" name="usuario" class="form-control cpfOuCnpj" autofocus placeholder="Digite o CPF ou CNPJ" style="padding:2rem;" />
+                  <div class="input-group-append">
+                    <div class="input-group-text" style="background:#fff;" Ð>
+                      <span class="fas fa-id-card text-orange" style="opacity: .7;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group input-group-lg mb-3">
+                  <input type="password" name="senha" class="form-control  " placeholder="Password" aria-describedby="inputGroup-sizing-lg" style="padding:2rem;" />
+                  <div class="input-group-append">
+                    <div class="input-group-text" style="background:#fff;">
+                      <span class="fas fa-lock text-orange" style="opacity: .7;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- <div class="col-7">
+                    <div class="icheck-primary">
+                      <input type="checkbox" id="remember" />
+                      <label for="remember">
+                        Lembre de mim
+                      </label>
+                    </div>
+                  </div> -->
+                  <!-- /.col -->
+                  <div class="col-12">
+                    <input type="hidden" name="entrar" value="entrar">
+                    <button type="submit" class="btn btn-lg btn-warning btn-block btn-flat" style="border-radius: .5rem; zoom: 1.2; margin-bottom: .5rem;">
+                      ENTRAR
+                    </button>
+                  </div>
+                  <!-- /.col -->
+                </div>
+              </form>
+
+              <!-- <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
                     <a href="#" class="btn btn-block btn-primary">
                       <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
@@ -85,19 +84,27 @@
                       <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
                     </a>
                   </div> -->
-        <!-- /.social-auth-links -->
+              <!-- /.social-auth-links -->
 
-        <p class="mb-1">
-          <a href="#">Esqueci a minha senha</a>
-        </p>
-        <p class="mb-0">
-          <!-- <a href="register.html" class="text-center">Registrar uma nova associação</a> -->
-        </p>
+              <p class="mb-1">
+                <a href="#">Esqueci a minha senha</a>
+              </p>
+              <p class="mb-0">
+                <!-- <a href="register.html" class="text-center">Registrar uma nova associação</a> -->
+              </p>
+            </div>
+            <!-- /.login-card-body -->
+          </div>
+        </div>
+        <!-- /.login-box -->
       </div>
-      <!-- /.login-card-body -->
+      <!-- <div class="col-md-6"></div> -->
+
     </div>
+
   </div>
-  <!-- /.login-box -->
+
+
 
   <!-- jQuery -->
   <script src="./plugins/jquery/jquery.min.js"></script>
