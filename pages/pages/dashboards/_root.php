@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0 " style="font-family:'Advent Pro', sans-serif; font-weight: bold; color: #C77129">
+        <h1 class="m-0 " style="font-family:'Advent Pro', sans-serif; font-weight: 300; color: #C77129">
           Painel</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
@@ -21,92 +21,7 @@
   <div class="container-fluid">
     <!-- Info boxes -->
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-3">
-        <a href="#">
-          <div class="info-box">
-            <span class="info-box-icon bg-info elevation-1">
-              <i class="mdi mdi-account-tie fas fa-fw fa-lg"></i></span>
 
-            <div class="info-box-content">
-              <span class="info-box-text" style="font-family:'Advent Pro', sans-serif; font-weight: bold; color: #C77129" >Advogados</span>
-              <span class="info-box-number">
-                <?php
-                $userSystem = ler('advogados', '', "");
-                echo $userSystem->rowCount();
-                ?>
-                <!-- <small>%</small> -->
-              </span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-        </a>
-        <!-- /.info-box -->
-      </div>
-      <!-- /.col -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <a href="?page=listarClientes">
-          <div class="info-box mb-3">
-            <span class="info-box-icon bg-success elevation-1">
-              <i class="mdi mdi-account fas fa-fw fa-lg"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text" style="font-family:'Advent Pro', sans-serif; font-weight: bold; color: #C77129">Clientes</span>
-              <span class="info-box-number">
-                <?php
-                $userSystem = ler('clientes', '', "");
-                echo $userSystem->rowCount();
-                ?>
-              </span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-        </a>
-        <!-- /.info-box -->
-      </div>
-      <!-- /.col -->
-
-      <!-- fix for small devices only -->
-      <div class="clearfix hidden-md-up"></div>
-
-      <div class="col-12 col-sm-6 col-md-3">
-        <a href="">
-          <div class="info-box mb-3">
-            <span class="info-box-icon bg-danger elevation-1">
-              <i class="mdi mdi-briefcase-variant mdi-36px"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text" style="font-family:'Advent Pro', sans-serif; font-weight: bold; color: #C77129">Processos </span>
-              <span class="info-box-number">
-                <?= $service = ler('clientes', '', "")->rowCount(); ?>
-              </span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-        </a>
-        <!-- /.info-box -->
-      </div>
-
-      <!-- /.col -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <a href="?page=listarusuarios">
-          <div class="info-box mb-3">
-            <span class="info-box-icon bg-warning elevation-1">
-              <i class="mdi mdi-account-group mdi-36px"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text" style="font-family:'Advent Pro', sans-serif; font-weight: bold; color: #C77129">
-                Usuários
-              </span>
-              <span class="info-box-number">
-                <?= $userSystem = ler('users', '', "WHERE flStatusUser = 1")->rowCount() - 1; ?>
-              </span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-      </div>
-      <!-- /.col -->
-      </a>
     </div>
     <!-- /.row -->
 
@@ -126,5 +41,5 @@
 
 
 <script>
-document.getElementById('inicio').classList.add("active");
+  document.getElementById('inicio').classList.add("active");
 </script>

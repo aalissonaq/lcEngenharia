@@ -68,6 +68,7 @@ if (!isset($_SESSION['USUARIO'])) {
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/b-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.css" />
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css" />
+  <!-- <link rel="stylesheet" href="./dist/css/bootstrapCustun.css" /> -->
 
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.2.95/css/materialdesignicons.min.css">
   <!-- <link rel="stylesheet" href="node_modules/@mdi/font/css/materialdesignicons.min.css">

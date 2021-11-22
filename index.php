@@ -36,7 +36,7 @@
           <!-- /.login-logo -->
           <div class="card" style=" box-shadow: none !important;  background: transparent !important;">
             <div class="card-body login-card-body" style="background: none">
-              <p class="login-box-msg text-primary">Faça login para iniciar sua sessão</p>
+              <p class="login-box-msg text-light">Faça login para iniciar sua sessão</p>
 
               <form action="./verifica.php" method="post">
                 <div class="input-group input-group-lg mb-3">
