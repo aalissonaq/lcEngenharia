@@ -100,11 +100,7 @@ function selectTipoProjeto() {
       document.getElementById("solar").style.visibility = "visible";
       document.getElementById("iPublica").style.display = "none";
       break;
-    case "iPublica":
-      document.getElementById("solar").style.display = "none";
-      document.getElementById("iPublica").style.display = "block";
-      document.getElementById("iPublica").style.visibility = "visible";
-      break;
+
 
     default:
       document.getElementById("solar").style.display = "none";

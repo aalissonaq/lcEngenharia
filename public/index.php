@@ -10,9 +10,78 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="../public/assets/css/bootstrapCustun.css" rel="stylesheet">
   <link href="../public/assets/css/global.css" rel="stylesheet">
+
+  <script src="../public/assets/js/sweetalert2.js"></script>
+
 </head>
 
 <body>
+
+  <?php
+  require_once './db/conexao.php';
+  require './util/util.php';
+
+  // function sweetalert($title, $message, $type)
+  // {
+  //   echo "<script type='text/javascript'>
+  // Swal.fire({
+  //   icon: '$type',
+  //   title: '$title',
+  //   text: '$message',
+  //   showConfirmButton: false,
+  //   timer: 1500
+  // });
+  // </script>";
+  // };
+
+  // sweetalert('titulo', 'mensagem', 'success');
+
+  $connect = novaConexao();
+  // print_r(get_class_methods($connect));
+
+
+  if (isset($_POST['gravar']) && $_POST['gravar'] == 'gravar') {
+    $nmPessoa = trim($_POST['nmPessoa']);
+    $stEmailPessoa = trim($_POST['stEmailPessoa']);
+    $stCepPessoa = trim($_POST['stCepPessoa']);
+    $stLogradouroPessoa = trim($_POST['stLogradouroPessoa']);
+    $nnCasaPessoa = trim($_POST['nnCasaPessoa']);
+    $stBairroPessoa = trim($_POST['stBairroPessoa']);
+    $stCidadePessoa = trim($_POST['stCidadePessoa']);
+    $stEstadoPessoa = trim($_POST['stEstadoPessoa']);
+    $nnTelefonePessoa = trim($_POST['nnTelefonePessoa']);
+    @$isWhats = $_POST['isWhats'] == 'on' ? 1 : 0;
+
+    $sql = "INSERT INTO pessoa (nmPessoa,stEmailPessoa,stCepPessoa,stLogradouroPessoa,nnCasaPessoa,stBairroPessoa,stCidadePessoa,stEstadoPessoa,nnTelefonePessoa,isWhats)
+    VALUE (
+        '$nmPessoa',
+        '$stEmailPessoa',
+        '$stCepPessoa',
+        '$stLogradouroPessoa',
+        '$nnCasaPessoa',
+        '$stBairroPessoa',
+        '$stCidadePessoa',
+        '$stEstadoPessoa',
+        '$nnTelefonePessoa',
+        '$isWhats'
+      )";
+
+    if ($connect->exec($sql)) {
+      $newID = $connect->lastInsertId();
+      sweetalert('Suscesso ', 'Solicitação de orçamento enviado com sucesso', 'success', 2500);
+    } else {
+      sweetalert('Ops !', 'Erro ao enviar a solicitação de orçamento', 'error', 2500);
+
+      // echo $connect->errorCode() . '<br>';
+      // print_r($connect->errorInfo());
+    }
+  }
+
+  // echo '<pre>';
+  // print_r($dadosPessoa);
+  // echo '</pre>'
+  ?>
+
   <div class="container-fluid">
     <div class="row m-4 ">
       <h2 class="text-uppercase d-flex justify-content-center ">
@@ -25,23 +94,22 @@
       </h3>
     </div>
 
-
     <div class="container">
       <div class="row mt-3">
         <!-- <span class="text-primary text-uppercase">Dados do Cliente</span> -->
-
         <div class="row">
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-6">
-              <label for="nome" class="form-label" required>Nome Completo</label>
-              <input type="text" class="form-control" id="nome" value="" required />
+          <form action="" method="post" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
+            <input type="hidden" name="gravar" value="gravar" />
+            <div class="col-md-7">
+              <label for="nmPessoa" class="form-label" required>Nome Completo</label>
+              <input type="text" class="form-control" id="nmPessoa" name="nmPessoa" placeholder="Nome Completo" value="" required />
               <!-- <div class="invalid-feedback">
                 Campo Obrigatório
               </div> -->
             </div>
-            <div class="col-md-6">
-              <label for="validationCustom02" class="form-label" required>E-mail</label>
-              <input type="email" class="form-control" id="validationCustom02" value="" placeholder="email@provedor.com ..." required />
+            <div class="col-md-5">
+              <label for="stEmailPessoa" class="form-label" required>E-mail</label>
+              <input type="email" class="form-control" name="stEmailPessoa" id="stEmailPessoa" value="" placeholder="email@provedor.com ..." required />
               <!-- <div class="invalid-feedback">
                 Campo Obrigatório
               </div> -->
@@ -100,9 +168,9 @@
                 </div> -->
             </div>
             <div class="col-md-3 ">
-              <label class="form-check-label" for="flexSwitchCheckDefault"> </label>
+              <label class="form-check-label" for="isWhats"> </label>
               <div class="form-check form-switch">
-                <input class="form-check-input mt-md-2 d-flex align-items-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="width:3.5rem; height:1.6rem;" />
+                <input class="form-check-input mt-md-2 d-flex align-items-center" type="checkbox" role="switch" id="isWhatsÐ" name="isWhats" style="width:3.5rem; height:1.6rem;" />
                 <label class="form-check-label ml-3" for="flexSwitchCheckDefault" style="">Este Telefone é Whataspp?</label>
               </div>
             </div>
@@ -130,8 +198,8 @@
               <div class="col-md-12">
                 <div class="row">
                   <div class="col-md-4">
-                    <label for="nnTelefonePessoa" required>Perfil</label>
-                    <select class="form-select" id="validationCustom04" required>
+                    <label for="nnTelefonePessoa" >Perfil</label>
+                    <select class="form-select" id="validationCustom04" >
                       <option selected disabled value="">Selecione um Perfil</option>
                       <option value="Residencial">Residencial</option>
                       <option value="Comercial">Comercial</option>
@@ -144,8 +212,8 @@
                   </div>
 
                   <div class="col-md-4">
-                    <label for="nnTelefonePessoa" required>Tipo de Ligação </label>
-                    <select class="form-select" id="validationCustom04" required>
+                    <label for="nnTelefonePessoa" >Tipo de Ligação </label>
+                    <select class="form-select" id="validationCustom04" >
                       <option selected disabled value=""> - </option>
                       <option value="mono">Monofásica</option>
                       <option value="bi">Bifásica</option>
@@ -156,7 +224,7 @@
                 </div> -->
                   </div>
                   <div class="col-md-4">
-                    <label for="nnTelefonePessoa" required>Consumo de Mensal em KWh </label>
+                    <label for="nnTelefonePessoa" >Consumo de Mensal em KWh </label>
                     <input type="number" id="" class="form-control" />
                     <!-- <div class="invalid-feedback">
                   Obrigatório !
@@ -180,7 +248,7 @@
           <div class="col-12 my-3">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-              <label class="form-check-label" for="invalidCheck">
+              <label required class="form-check-label" for="invalidCheck">
                 Agree to terms and conditions
               </label>
               <!-- <div class="invalid-feedback">
@@ -198,6 +266,7 @@
 
 
       <script type="text/javascript" src="../public/assets/js/app.js"></script>
+
 
 
       <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
