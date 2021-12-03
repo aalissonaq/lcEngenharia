@@ -17,13 +17,14 @@ if ($lerPessoa->rowCount() != 0) {
     $_SESSION['FOTO'] = $pessoa['foto'];
     $_SESSION['STATUS'] = $pessoa['flStatusUser'];
     $_SESSION['NIVEL'] = $pessoa['nivelUser'];
+    $_SESSION['LOGIN'] = 0;
   }
   $log['tipyActionLog'] = 'Entrar';
   $log['userActionLog'] = $_SESSION['USUARIO'];
   $log['actionLog'] = "o Usuario {$_SESSION['USUARIO']}, acessou o Sistema";
 
   inseir('logs', $log);
-  echo '<script>alert("Bem vindo!");</script>';
+  //echo '<script>alert("Bem vindo!");</script>';
   echo '<script>window.location="inicio.php";</script>';
 } else {
   echo '<script>alert("Usuário ou senha inválidos!");</script>';

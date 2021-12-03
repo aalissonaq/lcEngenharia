@@ -1,6 +1,10 @@
 <?php
 session_start();
 require_once './data/dbasys.php';
+require_once './data/conexao.php';
+$conexao = novaConexao();
+
+require_once './util/util.php';
 require_once './data/outfunc.php';
 
 if (!isset($_SESSION['USUARIO'])) {
@@ -88,7 +92,7 @@ if (!isset($_SESSION['USUARIO'])) {
 
   <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-
+  <script src="plugins/sweetalert2/sweetalert2.js"></script>
   <style type="text/css">
     input {
       caret-color: #C77129;
@@ -100,6 +104,10 @@ if (!isset($_SESSION['USUARIO'])) {
   <div class="wrapper">
     <!-- Navbar -->
     <?php
+    $_SESSION['LOGIN'] == 0 ?
+      sweetalert("Olá, {$_SESSION['USUARIO']}", 'Bem vindo ao sistema de gestão de Clientes e Orçamentos.', 'success', 2500, 'center') : '';
+    $_SESSION['LOGIN'] = 1;
+
     require_once './_includes/_navbarRoot.php';
     ?>
     <!-- /.navbar -->
@@ -202,6 +210,8 @@ if (!isset($_SESSION['USUARIO'])) {
   <script src="./plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
   <!-- Bootstrap Switch -->
   <script src="./plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+  <!-- SweetAlert 2  -->
+  <script src="plugins/sweetalert2/sweetalert2.js"></script>
 
 </body>
 
